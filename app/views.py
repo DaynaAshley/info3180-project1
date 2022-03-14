@@ -7,6 +7,7 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for
+from app.models import Property
 
 
 ###
@@ -22,8 +23,19 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Dayna-Ashley Roberts")
 
+@app.route('/properties/create')
+def create():
+    return render_template('home.html')
+
+@app.route('/properties')
+def properties(): 
+    return render_template('home.html')
+
+@app.route('/properties/<propertyid>')
+def property():
+    return render_template('home.html')
 
 ###
 # The functions below should be applicable to all Flask apps.
