@@ -1,3 +1,51 @@
 body {
     padding-top: 5rem;
 }
+
+ul{
+    list-style-type: none;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-gap: 20px;
+}
+
+input[type="file"]{
+    color: transparent;
+}
+
+#form, #form1, .fileupload label{
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.form-group input[type="text"]{
+    padding: 10px;
+}
+
+#form1{
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-gap: 20px;
+}
+
+.form-group2 select{
+    width: 278px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Images img{
+    width:300px;
+    height:300px;
+}
+
+.fileupload{
+    display: grid;
+    grid-template-columns: repeat(1,350px);
+    grid-gap: 10px;
+    padding-bottom: 20px;
+}
