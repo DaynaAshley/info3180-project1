@@ -8,9 +8,9 @@ class Property(db.Model):
     num_bed= db.Column(db.Integer)
     num_bath= db.Column(db.Integer)
     location = db.Column(db.String(100))
-    price=db.Column(db.Float)
+    price=db.Column(db.String(80))
     type= db.Column(db.String(80))
-    desc= db.Column(db.String(300))
+    desc= db.Column(db.String(500))
     filename= db.Column(db.String(80))
 
 

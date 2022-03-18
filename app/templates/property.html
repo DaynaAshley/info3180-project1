@@ -2,19 +2,19 @@
 
 {% block main %}
 
-<h1>Properties</h1>
     <ul class="Images">
         <div class="board">
-        {% for property in property_list%}
         <li>
             <img src="{{ url_for('get_image', filename=property.filename) }}" /> 
             <h3>{{property.title}}</h3>
-            <h3>{{property.location}}</h3>
             <h3>{{property.price}}</h3>
             <h3>{{property.type}}</h3>
-            <a href="{{url_for('property', propertyid=property.get_id())}}">View Property</a> 
+            <h3>{{property.desc}}</h3>
+            <h3>{{property.num_bed}}</h3>
+            <h3>{{property.num_bath}}</h3>
+            <h3>{{property.location}}</h3>
+            <button>Email Realtor</button>
         </li>
-        {% endfor %}
         </div>
     </ul>
 

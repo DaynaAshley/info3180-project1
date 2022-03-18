@@ -44,7 +44,7 @@ def create():
         ))
 
         property=Property(title = request.form['title'],num_bed=int(request.form['num_bed']),num_bath=int(request.form['num_bath']),
-        location=request.form['location'],price=float(request.form['price']), type=request.form['type'],
+        location=request.form['location'],price=request.form['price'], type=request.form['type'],
         desc=request.form['desc'],filename=filename)
        
         db.session.add(property)
@@ -54,25 +54,22 @@ def create():
 
     return render_template('propertyform.html',form=form)
 
-def get_uploaded_images():
-    filenames=[]
-   
-    return filenames
 
 @app.route("/uploads/<filename>")
 def get_image(filename):
     root_dir = os.getcwd()
     return send_from_directory(os.path.join(root_dir, app.config['UPLOAD_FOLDER']), filename)
 
-    
 
 @app.route('/properties')
-def properties(): 
-    return render_template('properties.html', files=get_uploaded_images())
+def properties():
+    property_list = db.session.query(Property).all()
+    return render_template('properties.html', property_list=property_list)
 
 @app.route('/properties/<propertyid>')
-def property():
-    return render_template('home.html')
+def property(propertyid):
+    prop=Property.query.filter_by(id=propertyid).first()
+    return render_template('property.html',property=prop)
 
 ###
 # The functions below should be applicable to all Flask apps.
