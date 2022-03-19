@@ -25,8 +25,8 @@ h1{
 }
 
 #square{
-    border: 1px solid var(--grey);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--black);
+    box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 
@@ -69,7 +69,7 @@ h1{
     height:440px;
 } 
 
-.card h3{
+.card h3,#square h4{
     padding-top: 20px;
 }
 .cardhold{
@@ -92,8 +92,13 @@ h1{
 }
 
 #square li{
-    height:529.6px;
+    height:504px;
     width:400px;
+   
+}
+
+#square i{
+    color: gray;
 }
 
 #price p{
@@ -111,11 +116,15 @@ h1{
  
 }
 
-#link{
-    position: sticky;
+#link{  
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
     width:388px;
     padding: 20px;
-    background-color: rgb(23, 197, 174) 
+    background-color: rgb(23, 197, 174);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; 
 }
 
 #price1 p{
@@ -141,11 +150,4 @@ h1{
 
 #third{
     padding-bottom: 10px;
-}
-#email{
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: rgb(23, 197, 174);
-    color: white;
 }
