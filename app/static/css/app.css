@@ -151,3 +151,10 @@ h1{
 #third{
     padding-bottom: 10px;
 }
+#email{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(23, 197, 174);
+    color: white;
+}
