@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 
 {% block main %}
-
+{% include 'flash_messages.html' %}
 <h1>Properties</h1>
     <ul class="Images">
         <div class="board">
+          
         {% for property in property_list%}
+        <div id="square">
         <li>
+            
             <img src="{{ url_for('get_image', filename=property.filename) }}" /> 
-            <h3>{{property.title}}</h3>
-            <h3>{{property.location}}</h3>
-            <h3>${{property.price}}</h3>
-            <h3>{{property.type}}</h3>
+            <div id="information">
+            <h4>{{property.title}}</h4>
+            <p><i class="fa fa-location-arrow"></i> {{property.location}}</p>
+            <div id="price1"><p>${{property.price}}</p></div>
+        </div>
+        <div id="link">
             <a href="{{url_for('property', propertyid=property.get_id())}}">View Property</a> 
+        </div>
         </li>
+    </div>
         {% endfor %}
+   
         </div>
     </ul>
 
