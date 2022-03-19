@@ -2,20 +2,27 @@
 
 {% block main %}
 
-    <ul class="Images">
-        <div class="board">
-        <li>
+<div class="cardhold">
+        <div class="card">
             <img src="{{ url_for('get_image', filename=property.filename) }}" /> 
-            <h3>{{property.title}}</h3>
-            <h3>${{property.price}}</h3>
-            <h3>{{property.type}}</h3>
-            <h3>{{property.desc}}</h3>
-            <h3>{{property.num_bed}}</h3>
-            <h3>{{property.num_bath}}</h3>
-            <h3>{{property.location}}</h3>
-            <button>Email Realtor</button>
-        </li>
-        </div>
-    </ul>
+            <div id="info">
+                <h3>{{property.title}}</h3>
+                <div id="first">
+                    <div id="price"><p>${{property.price}}</p></div>
+                    <div id="type"><p>{{property.type}}</p></div>
+                 </div>
+                <p>{{property.desc}}</p>
 
+                <div id="sec">
+                    <p><i class="fa fa-bed"></i> {{property.num_bed}} Bedrooms</p>
+                    <p><i class="fa fa-shower"></i> {{property.num_bath}} Bathrooms</p>
+                </div>
+
+                <p><i class="fa fa-location-arrow"></i> {{property.location}}</p>
+                <div id="third">
+                <button id="email">Email Realtor</button>
+            </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
